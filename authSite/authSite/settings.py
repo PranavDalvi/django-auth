@@ -125,11 +125,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.environ.get("MAIL")
 EMAIL_HOST_PASSWORD = os.environ.get("APP_PASSWORD")
 DEFAULT_FROM_EMAIL = os.environ.get("MAIL")
 EMAIL_SUBJECT_PREFIX = "Password Recovery"
 EMAIL_PORT = 587
-EMAIL_USER_TLS = True
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+
+LOGOUT_REDIRECT_URL = "/index/"
+LOGIN_REDIRECT_URL = "/index/"
