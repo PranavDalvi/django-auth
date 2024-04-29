@@ -20,7 +20,8 @@ from .views import index, registration_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.socialaccount.urls')),
     path('index/', index, name='index'),
     path('accounts/register/',registration_view, name="register"),
 ]

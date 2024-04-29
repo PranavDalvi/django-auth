@@ -8,5 +8,6 @@
         {{form.as_p}}
         <button type="submit">Register</button>
         <a href="{% url 'login' %}"> Already Having Account? </a>
+        <a href="{% provider_login_url 'google' %}">Sign up with Google</a>
     </form>
 {% endblock content %}
